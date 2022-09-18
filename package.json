@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/geo-phrase/geo-words/issues"
   },
-  "homepage": "https://github.com/geo-phrase/geo-words#readme"
+  "homepage": "https://github.com/geo-phrase/geo-words#readme",
+  "dependencies": {
+    "@geo-phrase/geo-number": "^0.1.0",
+    "bip39-en": "^1.1.1"
+  }
 }
