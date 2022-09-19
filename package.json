@@ -1,5 +1,5 @@
 {
-  "name": "geo-words",
+  "name": "@geo-phrase/geo-words",
   "version": "0.1.1",
   "description": "Convert geolocation to dictionary words both ways",
   "main": "src/main.mjs",
