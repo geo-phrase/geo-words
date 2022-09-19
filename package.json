@@ -1,6 +1,6 @@
 {
   "name": "geo-words",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Convert geolocation to dictionary words both ways",
   "main": "src/main.mjs",
   "type": "module",
