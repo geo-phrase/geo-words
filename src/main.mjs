@@ -8,7 +8,7 @@ const SIZE = wordlist.length;
 const word2id = (() => {
   const map = new Map();
   wordlist.map((word, i) => map.set(word, i));
-  return word => map.get(word.toLowerCase());
+  return word => map.get(word.toLowerCase()) ?? -1;
 })();
 
 const id2word = id => wordlist[id];
@@ -70,6 +70,10 @@ const GeoWords = () => {
     get locDetails() { return gn.number2coords(num); },
   };
 };
+
+GeoWords.wordlist = wordlist;
+GeoWords.word2id = word2id;
+GeoWords.id2word = id2word;
 
 export {
   wordlist,
