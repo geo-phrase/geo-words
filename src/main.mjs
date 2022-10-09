@@ -61,7 +61,7 @@ const GeoWords = () => {
     set hex(hex) { reclc(() => hex2num(hex)); },
     set bits(bits) {
       if (typeof bits === 'number') {
-        recalc(() => bits2num(new Array(bits).fill(0)));
+        recalc(() => bits2num(new Array(bits).fill(1)));
       } else {
         recalc(() => bits2num(bits));
       }
