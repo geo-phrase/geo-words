@@ -41,6 +41,10 @@ const num2hex = (num, prefix = '0x') => {
   return `${prefix}${num.toString(16)}`;
 };
 
+const bits2num = bits => {
+  return parseInt(bits.join(''), 2);
+};
+
 const GeoWords = () => {
   let num, lat, lon, bitsLen;
 
@@ -55,7 +59,13 @@ const GeoWords = () => {
   return {
     set num(n) { recalc(() => n); },
     set hex(hex) { reclc(() => hex2num(hex)); },
-    set bits(bits) { recalc(() => bits2num(bits)); },
+    set bits(bits) {
+      if (typeof bits === 'number') {
+        recalc(() => bits2num(new Array(bits).fill(0)));
+      } else {
+        recalc(() => bits2num(bits));
+      }
+    },
     set words(words) { recalc(() => words2num(words)); },
     set latitude(latitude) { recalc(() => gn.coords2number(latitude, lon, bitsLen)); },
     set longitude(longitude) { recalc(() => gn.coords2number(lat, longitude, bitsLen)); },
